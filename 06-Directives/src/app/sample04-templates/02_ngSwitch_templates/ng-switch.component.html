@@ -1,0 +1,24 @@
+<!--<div [ngSwitch]="choice">
+    <div *ngSwitchCase="'1'">Option 1<div>
+    <div *ngSwitchCase="'2'">Option 2</div>
+    <div *ngSwitchCase="'3'">Option 3</div>
+    <div *ngSwitchCase="'4'">Option 4</div>
+    <div *ngSwitchDefault>Default</div>
+</div>-->
+
+<!-- Синтаксический сахар для: -->
+<div [ngSwitch]="choice">
+  <template [ngSwitchCase]="'1'">
+    <div>Option 1</div>
+  </template>
+  <template [ngSwitchCase]="'2'">
+    <div>Option 2</div>
+  </template>
+  <template [ngSwitchCase]="'3'">
+    <div>Option 3</div>
+  </template>
+  <template [ngSwitchCase]="'4'">
+    <div>Option 4</div>
+  </template>
+  <template ngSwitchDefault>Default</template>
+</div>

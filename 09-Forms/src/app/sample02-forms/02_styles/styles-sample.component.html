@@ -1,0 +1,11 @@
+<div class="container">
+  <input type="text" [(ngModel)]="data" #myinput required> <br/>
+  <p>Input styles <b>{{myinput.className}}</b></p>
+
+  <p>Обратите внимание на изменения классов input, при следующих действиях</p>
+  <ul>
+    <li>Кликните на поле ввода потом за его пределами <i>(ng-untouched -> ng-touched)</i></li>
+    <li>Введите значение в поле ввода <i>(ng-pristine -> ng-dirty)</i></li>
+    <li>Удалите значение из поля ввода <i>(ng-valid -> ng-invalid)</i></li>
+  </ul>
+</div>

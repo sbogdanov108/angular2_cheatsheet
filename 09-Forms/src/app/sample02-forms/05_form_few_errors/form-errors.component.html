@@ -1,0 +1,42 @@
+<div class="container">
+  <h3>User Registration</h3>
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Имя</label>
+      <input type="text" class="form-control" id="name"
+             required="required" minlength="4"
+             [(ngModel)]="model.name" name="name" #name="ngModel">
+
+      <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">
+        <div [hidden]="!name.errors.required">
+          Поле имя обязательное для заполнения
+        </div>
+
+        <div [hidden]="!name.errors.minlength">
+          Минимум 4 символа
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="age">Возраст</label>
+      <input type="number" class="form-control" id="age"
+             [(ngModel)]="model.age" name="age" required #age="ngModel">
+
+      <div [hidden]="age.valid || age.pristine" class="alert alert-danger">
+        Поле возраст обязательное для заполнения
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="role">Роль</label>
+      <select class="form-control" id="role" required
+              [(ngModel)]="model.role" name="role">
+      <option *ngFor="let r of roles" [value]="r">{{r}}</option>
+    </select>
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>

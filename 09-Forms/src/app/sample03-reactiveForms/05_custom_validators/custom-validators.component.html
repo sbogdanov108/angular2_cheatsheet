@@ -1,0 +1,49 @@
+<div class="container">
+  <h3>User Registration. Reactive Form</h3>
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Имя</label>
+      <input id="name" type="text" class="form-control"
+             formControlName="name" required/>
+
+      <div *ngIf="formErrors.name" class="alert alert-danger">
+        {{ formErrors.name }}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" type="text" class="form-control"
+             formControlName="email" required/>
+
+      <div *ngIf="formErrors.email" class="alert alert-danger">
+        {{ formErrors.email }}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="age">Возраст</label>
+      <input id="age" class="form-control"
+             formControlName="age" required/>
+
+      <div *ngIf="formErrors.age" class="alert alert-danger">
+        {{ formErrors.age }}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="role">Роль</label>
+      <select id="role" class="form-control"
+              formControlName="role" required>
+        <option *ngFor="let r of roles" [value]="r">{{r}}</option>
+      </select>
+
+      <div *ngIf="formErrors.role" class="alert alert-danger">
+        {{ formErrors.role }}
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-default" [disabled]="!userForm.valid">Submit</button>
+  </form>
+</div>

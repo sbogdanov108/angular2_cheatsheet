@@ -1,0 +1,17 @@
+<!--
+    [(ngModel)]="expression" синтаксис двунаправленной привязки
+    [()] - banana in the box
+    Для использования директивы ngModule необходимо импортировать модуль FormsModule
+-->
+
+<label for="x-input">X</label>
+<input type="text" id="x-input" [(ngModel)]="xValue"/>
+
+
+<label for="y-input">Y</label>
+<input type="text" id="y-input" [(ngModel)]="yValue"/>
+
+<button (click)="calculate()">Caclulate</button>
+<button (click)="reset()">Reset</button>
+
+<div>Result - {{result}}</div>

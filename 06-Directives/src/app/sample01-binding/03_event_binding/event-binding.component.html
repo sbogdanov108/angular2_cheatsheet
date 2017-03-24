@@ -1,0 +1,9 @@
+<!--(click) - event target-->
+<button (click)="onSave()">Save 1</button> <br/>
+<!--on-click - canonical form-->
+<button on-click="onSave()">Save 2</button> <br/>
+<!--
+    $event - Event Object
+    содержимое Event Object определяется целевым свойством (target event)
+-->
+<button (click)="testEvent($event)">Test Event Object</button> <br/>

@@ -1,0 +1,24 @@
+<!-- *ngIf - удаляет элемент и его дочерние элементы из дерева если выражение false,
+     иначе, клон элемента div будет добавлен в разметку -->
+<div *ngIf="showUl">
+  <ul>
+    <li>Item 01</li>
+    <li>Item 02</li>
+    <li>Item 03</li>
+    <li>Item 04</li>
+    <li>Item 05</li>
+  </ul>
+</div>
+
+<!-- [style.display]="showUl ? 'block' : 'none'" - отображение и скрытие элемента -->
+<div [style.display]="showUl ? 'block' : 'none'">
+  <ul>
+    <li>Item 01</li>
+    <li>Item 02</li>
+    <li>Item 03</li>
+    <li>Item 04</li>
+    <li>Item 05</li>
+  </ul>
+</div>
+
+<button (click)="toggleVisibility()">Show / Hide</button>

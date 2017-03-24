@@ -1,0 +1,26 @@
+/* С помощью псевдо класса :host можно изменить стили элемента, в котором находится компонент */
+:host {
+  display : block;
+  border  : 1px solid black;
+  margin  : 8px 0 8px 0;
+  padding : 8px;
+}
+
+/* :host-context - проверка родительских элементов относительно компонента
+    на соответствие селектору, указанному в параметрах */
+:host-context(.theme-red) h2 {
+  color : red;
+}
+
+:host-context(.theme-green) h2 {
+  color : green;
+}
+
+p {
+  font-style : italic;
+}
+
+/* Все параграфы текущего компонента и дочерних Shadow DOM получат следующие стили */
+:host /deep/ p {
+  text-decoration : underline;
+}

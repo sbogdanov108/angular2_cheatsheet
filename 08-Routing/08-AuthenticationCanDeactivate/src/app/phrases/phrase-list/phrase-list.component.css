@@ -1,0 +1,13 @@
+.phrases li {
+  cursor : pointer;
+  margin : 2px;
+}
+
+.phrases li:hover {
+  background-color : lightcoral;
+}
+
+.phrases li.selected {
+  font-weight      : bold;
+  background-color : lightcoral;
+}

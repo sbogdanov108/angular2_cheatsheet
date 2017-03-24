@@ -1,0 +1,10 @@
+<!--
+    значение CSS свойства color будет установлено в соответствии с возвращаемым
+    значением метода getDivColor
+-->
+<div [style.color]="getDivColor()">Hello world</div>
+<!--
+    Значение свойства background-color будет установлено в соответствии с результатом
+    работы тернарного оператора
+-->
+<div [style.background-color]="isHighlighted ? 'yellow' : 'gray'">Hello world</div>

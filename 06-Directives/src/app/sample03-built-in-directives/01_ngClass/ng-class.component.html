@@ -1,0 +1,31 @@
+<input type="checkbox" [(ngModel)]="settings.accent"> Accent <br/>
+<input type="checkbox" [(ngModel)]="settings.error"> Error <br/>
+<input type="checkbox" [(ngModel)]="settings.highlighted"> Highlighted <br/>
+
+<!--
+    Использование директивы ngClass
+    При использовании данной директивы применяется привязка к контрольному объекту.
+    Каждый ключ объекта - имя CSS класса. Если значение ключа true - класс добавляется
+    к элементу, иначе - убирается.
+-->
+<div [ngClass]="settings">Hello world #1</div>
+
+<hr/>
+
+<!-- Использование class binding -->
+<div
+  [class.accent]="settings.accent"
+  [class.error]="settings.error"
+  [class.highlighted]="settings.highlighted">
+  Hello world #2
+</div>
+
+<hr/>
+
+<!-- Использование массива вместо объекта -->
+<div [ngClass]="['accent', 'error']">Hello world #3</div>
+
+<hr/>
+
+<!-- Использование строкового значения -->
+<div [ngClass]="'accent error'">Hello world #3</div>

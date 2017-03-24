@@ -1,0 +1,22 @@
+<!--
+    код работающий так же как и ngModel
+    [value]="currentValue" - устанавливаем значение свойства value
+    (input)="currentValue = $event.target.value" - отслеживаем пользовательский ввод и меняем значение свойства currentValue
+-->
+<input type="text"
+       [value]="currentValue"
+       (input)="currentValue = $event.target.value"/>
+<p>{{currentValue}}</p>
+
+<!--
+    ngModel input свойство устанавливает значение value
+    а событие ngModelChange выдает событие при изменении свойства.
+    Реализация этого свойства и события специфична для каждого компонента,
+    для которого используется данная директива.
+    Для того чтобы ngModel поддерживал пользовательские компоненты необходимо реализовать ControlValueAccessor
+    https://angular.io/docs/ts/latest/api/forms/index/ControlValueAccessor-interface.html
+-->
+<input type="text"
+       [ngModel]="currentValue"
+       (ngModelChange)="currentValue = $event"/>
+<p>{{currentValue}}</p>

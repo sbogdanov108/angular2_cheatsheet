@@ -1,0 +1,8 @@
+<div *ngIf="visible">
+  <h2>Message:</h2>
+  <p>
+    <ng-content></ng-content>
+  </p>
+
+  <button (click)="hide()">Hide</button>
+</div>

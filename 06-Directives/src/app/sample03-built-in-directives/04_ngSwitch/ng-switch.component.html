@@ -1,0 +1,22 @@
+<!--
+    ngSwitch - директива используется для того, чтобы отобразить один элемент (и его дочерние элементы)
+    из набора возможных элементов.
+    При использовании директив ngSwitchCase и ngSwitchDefault обязательно нужно использовать ( * )
+    Можно использовать любой тип данных при установке значения в ngSwitchCase
+-->
+<div [ngSwitch]="choice">
+  <div *ngSwitchCase="'1'">
+    Option 1
+  </div>
+  <div *ngSwitchCase="'2'">
+    Option 2
+  </div>
+  <div *ngSwitchCase="'3'">
+    Option 3
+  </div>
+  <div *ngSwitchDefault>
+    Default Option
+  </div>
+</div>
+
+Make your choice <input type="text" [(ngModel)]="choice"/>

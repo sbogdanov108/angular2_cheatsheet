@@ -1,0 +1,28 @@
+:host {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+nav {
+    float: left;
+    width: 20%;
+}
+#sample-panel {
+    margin-left: 20%;
+}
+h1.lesson-title {
+    padding: 0 0 6px 65px;
+    background: url('app/images/angular.png') no-repeat;
+}
+nav h4 {
+    margin: 4px 0 10px 0;
+}
+nav a {
+    text-decoration: none;
+    transition: all 0.5s;
+    color: #E03237;
+}
+nav a.active {
+    border-radius: 3px;
+    padding: 2px 8px;
+    background-color: #E03237;
+    color:white;
+}

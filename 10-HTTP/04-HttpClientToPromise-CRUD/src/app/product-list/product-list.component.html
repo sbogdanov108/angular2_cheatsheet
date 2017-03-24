@@ -1,0 +1,30 @@
+<h2>List of Products</h2>
+
+<p>
+  <button class="btn btn-primary" (click)="createProduct()">Create</button>
+  <button class="btn btn-default" (click)="refresh()">Refresh</button>
+</p>
+
+<div *ngIf="errorMessage" class="alert alert-danger">
+  {{errorMessage}}
+</div>
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let product of products">
+    <td>
+      {{product.name}}
+    </td>
+    <td>
+      {{product.price}}
+    </td>
+    <td>
+      <button class="btn btn-default" (click)="editProduct(product)">Edit</button>
+      <button class="btn btn-default" (click)="deleteProduct(product)">Delete</button>
+    </td>
+  </tr>
+</table>

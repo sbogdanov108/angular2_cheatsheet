@@ -1,0 +1,12 @@
+<!--<div *ngIf="isVisible">-->
+  <!--Hello world-->
+<!--</div>-->
+
+<!-- Синтаксический сахар для: -->
+<template [ngIf]="isVisible">
+  <div>
+    Hello world
+  </div>
+</template>
+
+<button (click)="hide()">Hide</button>

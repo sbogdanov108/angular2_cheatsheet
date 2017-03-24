@@ -1,0 +1,8 @@
+<div *ngIf="phrase">
+  <h2>Selected Phrase</h2>
+  Value: <input type="text" [(ngModel)]="editValue"/> <br/> Language:
+  <input type="text" [(ngModel)]="editLanguage"/> <br/>
+
+  <button (click)="goToPhrasesList()">Cancel</button>
+  <button (click)="save()">Save</button>
+</div>

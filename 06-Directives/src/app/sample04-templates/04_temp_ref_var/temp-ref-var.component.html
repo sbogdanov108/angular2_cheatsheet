@@ -1,0 +1,16 @@
+<!--
+    Template Reference Variable - ссылка на DOM элемент или директиву в шаблоне.
+    К переменной можно обратиться в любой части шаблона, в котором она объявлена.
+
+    Есть два способа объявления переменной:
+    префикс #, например #varname
+    префикс ref-, например, ref-varname
+-->
+
+X <input #xInput type="text"/> <br/>
+Y <input ref-yInput type="text"/> <br/>
+
+<!-- xInput - ссылка на элемент input, созданный в начале шаблона -->
+<button (click)="calculateSum(xInput.value, yInput.value)">Sum</button> <br/>
+
+Result = {{result}}

@@ -1,0 +1,38 @@
+<div class="container">
+  <form novalidate [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+
+    <div class="form-group">
+      <label for="login">Login</label>
+      <input type="text"
+             class="form-control"
+             id="login"
+             formControlName="login">
+
+      <div *ngIf="loginForm.get('login').hasError('required') && loginForm.get('login').touched"
+           class="alert alert-danger">
+        Обязательное поле.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password"
+             class="form-control"
+             id="password"
+             formControlName="password">
+
+      <div *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched"
+           class="alert alert-danger">
+        Обязательное поле.
+      </div>
+
+      <div *ngIf="loginForm.get('password').hasError('minlength') && loginForm.get('password').touched"
+           class="alert alert-danger">
+        Длина строки должна быть не менее 7 символов.
+      </div>
+    </div>
+
+    <input type="submit" class="btn btn-default"
+           [disabled]="loginForm.invalid" value="Login">
+  </form>
+</div>

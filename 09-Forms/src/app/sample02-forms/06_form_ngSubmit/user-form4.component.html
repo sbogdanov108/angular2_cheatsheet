@@ -1,0 +1,36 @@
+<div class="container">
+  <h3>User Registartion</h3>
+
+  <!-- Angular автоматически устанавливает директиву ngForm для всех форм -->
+  <form (ngSubmit)="onSubmit()" #userform="ngForm">
+    <div class="form-group">
+      <label for="name">Имя</label>
+      <input type="text" class="form-control" id="name"
+             required [(ngModel)]="model.name" name="name" #name="ngModel">
+
+      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+        Поле имя обязательное для заполнения
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="age">Возраст</label>
+      <input type="number" class="form-control" id="age"
+             [(ngModel)]="model.age" name="age" required #age="ngModel">
+
+      <div [hidden]="age.valid || age.pristine" class="alert alert-danger">
+        Поле возраст обязательное для заполнения
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="role">Роль</label>
+      <select class="form-control" id="role" required
+              [(ngModel)]="model.role" name="role">
+      <option *ngFor="let r of roles" [value]="r">{{r}}</option>
+    </select>
+    </div>
+
+    <button type="submit" class="btn btn-default" [disabled]="!userform.form.valid">Submit</button>
+  </form>
+</div>

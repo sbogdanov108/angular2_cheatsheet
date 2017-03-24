@@ -1,0 +1,18 @@
+div {
+  padding : 8px;
+  margin  : 8px;
+}
+
+.accent-border {
+  border : 2px solid orange;
+}
+
+.error-text {
+  font-family : monospace;
+  color       : red;
+  font-weight : bold;
+}
+
+.highlighted {
+  background-color : lightyellow;
+}

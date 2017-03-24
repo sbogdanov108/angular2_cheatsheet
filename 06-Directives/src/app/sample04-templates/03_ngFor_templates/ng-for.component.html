@@ -1,0 +1,14 @@
+<!--<ul>
+	<li *ngFor="let item of items">
+		{{item}}
+	</li>
+</ul>-->
+
+<!-- Синтаксический сахар для: -->
+<ul>
+  <template ngFor let-item [ngForOf]="items">
+    <li>
+      {{item}}
+    </li>
+  </template>
+</ul>

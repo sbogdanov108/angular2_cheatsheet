@@ -1,0 +1,15 @@
+<h1 class="lesson-title">
+  Angular 2 Components. Настройка маршрутизации.
+</h1>
+
+<nav>
+  <!-- routerLink - директива задает адрес для ссылки -->
+  <!-- routerLinkActive - директива устанавливает или удаляет класс в зависимости от состояния маршрута -->
+  <a routerLink="/list1" routerLinkActive="active">List 1</a>
+  <a routerLink="/list2" routerLinkActive="active">List 2</a>
+</nav>
+
+<div>
+  <!-- router-outlet после данного элемента будет отображаться компонент, который выбирает роутер в соответствии с маршрутом -->
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+  <h3>User Registration</h3>
+
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm" novalidate>
+    <div class="form-group">
+      <label for="name">Имя</label>
+      <input type="text" class="form-control" id="name"
+             required minlength="4" [(ngModel)]="model.name" name="name" #name="ngModel">
+
+      <div *ngIf="formErrors.name" class="alert alert-danger">
+        {{formErrors.name}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="age">Возраст</label>
+      <input type="number" class="form-control" id="age"
+             [(ngModel)]="model.age" name="age" required #age="ngModel">
+
+      <div *ngIf="formErrors.age" class="alert alert-danger">
+        {{formErrors.age}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="role">Роль</label>
+      <select class="form-control" id="role" required
+              [(ngModel)]="model.role" name="role" #role="ngModel">
+      <option *ngFor="let r of roles" [value]="r">{{r}}</option>
+    </select>
+    </div>
+
+    <button type="submit" class="btn btn-default" [disabled]="!userForm.form.valid">Submit</button>
+  </form>
+</div>

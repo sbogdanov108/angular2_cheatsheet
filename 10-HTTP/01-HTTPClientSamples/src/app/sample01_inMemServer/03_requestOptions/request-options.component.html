@@ -1,0 +1,11 @@
+<div>
+  <ul>
+    <li *ngFor="let item of itemArray">{{item.name}}</li>
+  </ul>
+
+  <div>
+    id <input type="text" [(ngModel)]="id"/> name <input type="text" [(ngModel)]="name"/>
+  </div>
+
+  <button (click)="clickHandler()">Post Data</button>
+</div>

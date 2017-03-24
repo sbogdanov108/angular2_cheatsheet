@@ -1,0 +1,5 @@
+<!-- (blur)="onKeyup(textbox.value)" - обработчик на событие потери фокуса -->
+<input #textbox
+       (keyup.enter)="onKeyup(textbox.value)"
+       (blur)="onKeyup(textbox.value)">
+<p>{{message}}</p>
